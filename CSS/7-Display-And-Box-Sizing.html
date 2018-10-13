@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Display And Box Sizing">
+    <meta name="author" content="SFelon">
+    <title>Display And Box Sizing</title>
+    
+    <style>
+        p {color: red;}
+        
+        p.ex1 {display: none;}
+        p.ex2 {display: inline;}
+        p.ex3 {display: block;}
+        p.ex4 {display: inline-block;}
+
+        .box1 {
+            box-sizing: content-box;
+            width: 500px;
+            height: 200px;
+            padding: 25px;
+            border: 10px solid green;
+        }
+
+        .box2 {
+            box-sizing: border-box;
+            width: 500px;
+            height: 200px;
+            padding: 25px;
+            border: 10px solid green;
+        }
+            
+    </style>
+</head>
+<body>
+    <h1>The display and box sizing properties</h1>
+    
+    <h2>display: none: The element is completely removed</h2>
+    <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. <p class="ex1">HELLO WORLD!</p> Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.
+    </div>
+    
+    
+    <h2>display: inline: Displays an element as an inline element (like span). Any height and width properties will have no effect</h2>
+    <h2>Box-sizing: content-box</h2>
+    <div div class="box1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. <p class="ex2">HELLO WORLD!</p> Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.
+    </div>
+    Total width of Box = 500 + 2 x 25(padding) + 2 x 10 (border) = 570 px
+
+    <h2>display: block: Displays an element as a block element (like p). It starts on a new line, and takes up the whole width</h2>
+    <h2>Box-sizing: border-box</h2>
+    <div div class="box2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. <p class="ex3">HELLO WORLD!</p> Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.
+    </div>
+    Total width of Box is always 500px
+
+    <h2>display: inline-block: Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values</h2>
+    <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. <p class="ex4">HELLO WORLD!</p> Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.
+    </div>
+                
+</body>
+</html>

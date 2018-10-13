@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Float">
+    <meta name="author" content="SFelon">
+    <title>Float</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .box {
+            float: left;
+            width: 33.33%;
+            padding: 50px;
+        }
+
+        .box2 {
+            float: right;
+            width: 33.33%;
+            padding: 50px;
+        }
+
+        .box3 {
+            width: 33.33%;
+            padding: 50px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Float left + clearfix</h2>
+
+<div class="clearfix">
+  <div class="box" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+  </div>
+  <div class="box" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+  </div>
+</div>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem accusantium qui distinctio nisi dolorum et delectus molestias dignissimos dolor enim vero natus, ipsum quasi.</p>
+
+<h2>Float right + clearfix </h2>
+
+<div class="clearfix">
+  <div class="box2" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+  </div>
+  <div class="box2" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+  </div>
+</div>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem accusantium qui distinctio nisi dolorum et delectus molestias dignissimos dolor enim vero natus, ipsum quasi.</p>
+
+<h2>Float none</h2>
+
+<div>
+  <div class="box3" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+  </div>
+  <div class="box3" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+  </div>
+</div>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem accusantium qui distinctio nisi dolorum et delectus molestias dignissimos dolor enim vero natus, ipsum quasi.</p>
+</body>
+</html>
