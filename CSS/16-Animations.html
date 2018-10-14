@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Animations">
+    <meta name="author" content="SFelon">
+    <title>Animations</title>
+	<style>
+
+	body {
+		background-color: #bcbcbc;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 20px;
+	}
+
+
+	.container {
+        display: flex;
+        flex-direction: row;
+		padding: 0;
+		margin-bottom: 25px;
+	}
+
+	.parent {
+		width: 600px;
+		padding: 10px;
+		text-align: center;
+	}
+
+	.example1 {
+		width: 100px;
+		height: 100px;
+        position: relative;
+        animation-name: animation1;
+        animation-duration: 4s;
+        animation-iteration-count: 2; 
+	}
+
+	.example2 {
+		width: 100px;
+		height: 100px;
+        animation-name: animation2;
+        animation-duration: 4s;
+        animation-iteration-count: infinite; 
+	}
+
+    .example3 {
+		width: 100px;
+		height: 100px;
+        animation: animation3 3s linear 0s infinite alternate-reverse;
+	}
+
+    @keyframes animation1 {
+        0%   {left: 0px; top: 0px}
+        25%  {background-color:yellow; left:0px; top:200px;}
+        50%  {background-color:blue; left:200px; top:200px;}
+        75%  {background-color:green; left:200px; top:100px;}
+        100% {background-color:red; left:0px; top:0px;}
+    }
+
+
+    @keyframes animation2 {
+        0% {
+            transform: scale(.5);
+        }
+        50% {
+            background-color: orange;
+        }
+        100% {
+            transform: scale(1.5);
+            background-color: yellow;
+            border-radius: 100%;
+        }
+    }
+
+    @keyframes animation3 {
+        0% {
+            opacity: 0.1;
+        }
+        50% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+
+	</style>
+</head>
+<body>
+	<h2>Animation</h2>
+
+	<div class="container">
+
+		<div class="parent">
+			<div class="example1" style="background-color: forestgreen">
+				Example1
+			</div>
+		</div>
+				
+        <div class="parent">
+			<div class="example2" style="background-color: coral">
+				Example2
+			</div>
+		</div>
+        
+        <div class="parent">
+			<div class="example3" style="background-color: darkorchid">
+				Example3
+			</div>
+		</div>
+
+</body>
+</html>

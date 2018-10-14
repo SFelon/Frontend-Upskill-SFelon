@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="RWD Units and Calc">
+    <meta name="author" content="SFelon">
+    <title>RWD Units and Calc</title>
+<style>
+        body {
+            font-size: 28px;
+        }
+        .em {
+            font-size: 2em;
+        }
+
+        .rem {
+            font-size: 1.5rem;
+        }
+
+        .vw {
+            background-color: #bcbcbc;
+            height: 80px;
+            width: 50vw;
+        }
+
+        .vh {
+            background-color: #bcbcbc;
+            height: 30vh;
+            width: 50vw;
+        }
+
+        .vmin-vmax {
+            background-color: #bcbcbc;
+            height: 50vmin;
+            width: 75vmax;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            background: lightcoral;
+        }     
+
+        .child {
+            width: 25%;
+            height: 25%;
+            background: #bcbcbc;
+        }
+
+        .ex1 {
+            background-color: blueviolet;
+            width: calc(50% + 250px);
+        }
+
+        .ex2 {
+            background-color: darkgoldenrod;
+            width: calc(100%/4);
+        }
+
+        .ex3 {
+            background-color: darkseagreen;
+            width: calc(500px - 4em);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>RWD Units and Calc</h2>
+    <p class="root">28px TEXT Default</p>
+    <p class="em">2.5em TEXT</p>
+    <p class="rem">1.5rem TEXT</p>
+    <div class="vw">50vw div</div>
+    <br/>
+    <div class="vh">50vw 30vh div</div>
+    <br/>
+    <div class="vmin-vmax">50vmin 75vmax div</div>
+    <p>25% of the parent div</p>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <br/>
+    <div class="ex1">calc example 1</div>
+    <div class="ex2">calc example 2</div>
+    <div class="ex3">calc example 3</div>
+
+</body>
+</html>

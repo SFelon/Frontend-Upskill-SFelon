@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Grid Layout">
+    <meta name="author" content="SFelon">
+    <title>Grid Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #cbcbcb;
+            padding: 10px;
+        }
+        
+        .grid-container-inline {
+            display: inline-grid;
+            grid-template-columns: auto auto auto;
+            background-color: #cbcbcb;
+            padding: 10px;
+        }
+
+        .grid-container-gap {
+            display: grid;
+            grid-gap: 20px 50px;
+            grid-template-columns: auto auto auto;
+            background-color: #cbcbcb;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: #000fff;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .grid-item1 {
+        background-color: #000fff;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Grid Layout</h2>
+    <ol>
+        <li>
+            <a href="https://www.w3schools.com/css/css_grid.asp">
+                https://www.w3schools.com/css/css_grid.asp
+            </a>
+        </li>
+    </ol>
+
+    <p> Grid </p>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <p> Grid Inline </p>
+    <div class="grid-container-inline">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <p> Grid Gap </p>
+    <div class="grid-container-gap">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <p> Grid Lines Column</p>
+    <div class="grid-container-gap">
+        <div class="grid-item1">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+    
+
+</body>
+</html>
