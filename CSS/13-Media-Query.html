@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Media Query">
+    <meta name="author" content="SFelon">
+    <title>Media Query</title>
+    <style>
+    div {
+        background-color: #bcbcbc;
+        height: 100px;
+    }
+
+    @media screen and (min-width: 500px) {
+        div.example1 {
+            background-color: blue;
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        div.example1 {
+            background-color: green;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        div.example1 {
+            background-color: red;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .column {
+            width: 50%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+    }
+
+/* When the width is between 600px and 900px OR above 1100px - change the appearance of <div> */
+    @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+        div.example2 {
+            padding: 50px;
+            border: 10px solid black;
+            background: teal;
+        }
+    }
+
+    @media only screen and (min-width: 601px) {
+        div.example3 {
+            font-size: 70px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        div.example3 {
+            font-size: 40px;
+        }
+    }    
+
+    @media only screen and (max-width: 600px) {
+        div.example4 {
+            display: none;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <h2>Media Query</h2>
+    <ol>
+        <li>
+            <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">
+                https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+            </a>
+        </li>
+    </ol>
+
+    <div class="example1"></div>
+    <br/>
+    <div class="column"></div>
+    <br/>
+    <div class="example2"></div>
+    <br/>
+    <div class="example3">Lorem ipsum </div>
+    <br/>
+    <div class="example4">Hidden on small screen</div>
+
+</body>
+</html>

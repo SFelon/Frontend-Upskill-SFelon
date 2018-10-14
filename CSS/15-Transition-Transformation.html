@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Transition and Transformation">
+    <meta name="author" content="SFelon">
+    <title>Transition and Transformation</title>
+	<style>
+
+	body {
+		background-color: #bcbcbc;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 20px;
+	}
+
+	a:link {
+		color: red;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: green;
+	}
+
+
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 1000px;
+		text-align: center;
+		padding: 0;
+		margin-bottom: 25px;
+	}
+
+	.parent {
+		display: inline-block;
+		width: 400px;
+		padding: 10px;
+		text-align: center;
+		
+	}
+
+
+	/* Hover effects */
+
+	.example1 {
+		width: 300px;
+		height: 300px;
+		transition: all 0.5s ease-in-out;
+	}
+
+	.example1:hover {
+		-webkit-transform: scale(0.5);
+		-ms-transform: scale(0.5);
+		transform: scale(0.5);
+	}
+
+	.example2 {
+		width: 300px;
+		height: 300px;
+		transition: transform .3s ease-out;
+	}
+
+	.example2:hover {
+		-webkit-transform: scale(0.8) rotate(15deg);
+		-ms-transform: scale(0.8) rotate(15deg);
+		transform: scale(0.8) rotate(15deg);
+	}
+
+	.example3 {
+		position: relative;
+		width: 300px;
+		height: 300px;
+	}
+
+	.overlay {
+		position: absolute;
+		display: block;
+		width: 300px;
+		height: 300px;
+		background-color: #111;
+		left: 0px;
+		bottom: 0px;
+		opacity: 0.1;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.overlay:hover  {
+		opacity: 0.8;
+	}
+
+
+	.example4 {
+		width: 500px;
+		height: 300px;
+		transition: width 1s;
+		transition-delay: 0.2s;
+	}
+
+	.example4:hover {
+		width:300px;
+	}
+
+
+	</style>
+</head>
+<body>
+	<h2>Transition and Transformation</h2>
+
+	<div class="container">
+
+		<div class="parent">
+			<div class="example1" style="background-color: forestgreen">
+				Example1
+			</div>
+		</div>
+		
+		<div class="parent">
+			<div class="example2" style="background-color: lightskyblue">
+				Example2
+			</div>
+		</div>
+		
+		<div class="parent">
+			<div class="example3" style="background-color: coral"> 
+				<div class="overlay">
+					Example3
+				</div>
+			</div>	
+		</div>
+		
+		<div class="parent">
+			<div class="example4" style="background-color: darkred"> 
+				Example4
+			</div>			
+		</div>				
+	
+</body>
+</html>
