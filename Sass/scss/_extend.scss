@@ -1,0 +1,32 @@
+/**
+* Sass extend
+**/
+
+/* Example 1 */
+
+%style {
+  font-size: 30px;
+  font-style: italic;
+}
+
+h1 {
+  @extend %style;
+  color: #000;
+}
+
+.sample-text{
+  @extend %style;
+}
+
+/* Example 2 extending all nested selectors */
+
+.test-section {
+  padding: 20px;
+  h3 {
+    color: blue;
+  }
+}
+
+.new-section {
+  @extend .test-section;
+}

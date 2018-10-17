@@ -1,0 +1,54 @@
+/**
+* Sass functions
+**/
+
+@function add-function($first-number, $second-number){
+  @return $first-number + $second-number
+}
+
+@function calc-percent($first-value, $second-value) {
+  @return ($first-value / $second-value) * 100%;
+}
+
+.article {
+  padding: add-function(10px, 10px);
+  width: calc-percent(500px, 1000px);
+}
+
+/* if - else if -  else */
+
+$value: 1;
+#text1 {
+  @if $value == 1 {
+    color: red;
+  } @else if $value == 2 {
+    color: blue;
+  } @else {
+    color: grey;
+  }
+}
+
+/* for */
+
+@for $i from 1 through 4 {
+  $width: percentage(1 / $i);
+
+  .col-#{$i} {
+  width: $width;
+  }
+}
+
+/* each */
+@each $test in test1, test2, test3, test4 {
+  #{$test} {
+    background-color: red;
+  }
+}
+
+/* while */
+$number: 1;
+
+@while $number < 5 {
+  .col-#{$number} { width: 100%/4 * $number;}
+  $number: $number + 1;
+};

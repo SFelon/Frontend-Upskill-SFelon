@@ -1,0 +1,56 @@
+/**
+* Sass variables exercise
+**/
+
+$peppermint: rgb(217, 245, 232);
+$lightteal: rgb(55, 203, 194);
+$shinygold: rgb(255, 187, 51);
+$tomatosauce: rgb(255, 99, 71);
+
+p#1 {
+  color: $peppermint;
+}
+
+p#2 {
+  color: $lightteal;
+}
+
+p#2 {
+  color: $shinygold;
+}
+
+p#3 {
+  color: $tomatosauce;
+}
+
+/* !default and !global flag */
+
+$text-color: blue;
+
+.ex1 {
+  $text-color: red;
+  color: $text-color;
+  $text-color: green !global;
+}
+
+.ex2 {
+  color: $text-color;
+}
+
+/* Variable is set to Red if it has not been set beforehand */
+
+$background-color: blue;
+
+@mixin background-color {
+  $background-color: red !default;
+  background-color: $background-color;
+}
+
+.ex3 {
+  @include background-color;
+}
+
+.ex4 {
+  @include background-color;
+}
+

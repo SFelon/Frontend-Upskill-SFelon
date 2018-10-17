@@ -1,0 +1,11 @@
+{
+  "name": "Sass-Upskill",
+  "version": "1.0.0",
+  "dependencies": {
+    "node-sass": "^4.9.4"
+  },
+  "scripts": {
+    "css-compile": "node-sass --output css scss/styles.scss",
+    "scss": "node-sass --watch scss -o css"
+  }
+}

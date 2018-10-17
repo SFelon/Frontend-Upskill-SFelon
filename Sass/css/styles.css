@@ -1,0 +1,155 @@
+/* Sass variables exercise */
+p#1 {
+  color: #d9f5e8; }
+
+p#2 {
+  color: #37cbc2; }
+
+p#2 {
+  color: #ffbb33; }
+
+p#3 {
+  color: tomato; }
+
+/* !default and !global flag */
+.ex1 {
+  color: red; }
+
+.ex2 {
+  color: green; }
+
+/* Variable is set to Red if it has not been set beforehand */
+.ex3 {
+  background-color: blue; }
+
+.ex4 {
+  background-color: blue; }
+
+/* Sass mixins */
+.overlay {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.8;
+  background-color: black; }
+
+/* Mixin for web fonts embedding */
+/*
+@include fontFace('MyFont','font/myfont');
+*/
+/* Sass functions */
+.article {
+  padding: 20px;
+  width: 50%; }
+
+/* if - else if -  else */
+#text1 {
+  color: red; }
+
+/* for */
+.col-1 {
+  width: 100%; }
+
+.col-2 {
+  width: 50%; }
+
+.col-3 {
+  width: 33.33333%; }
+
+.col-4 {
+  width: 25%; }
+
+/* each */
+test1 {
+  background-color: red; }
+
+test2 {
+  background-color: red; }
+
+test3 {
+  background-color: red; }
+
+test4 {
+  background-color: red; }
+
+/* while */
+.col-1 {
+  width: 25%; }
+
+.col-2 {
+  width: 50%; }
+
+.col-3 {
+  width: 75%; }
+
+.col-4 {
+  width: 100%; }
+
+/* Sass nesting */
+#example {
+  position: fixed;
+  width: 100%; }
+  #example ul {
+    list-style-type: none; }
+    #example ul li {
+      background-color: #ffffff;
+      color: #bcbcbc; }
+
+/* Example 2 nesting media queries */
+#example2 {
+  position: fixed;
+  width: 100%; }
+  @media (max-width: 500px) {
+    #example2 {
+      left: -100px; } }
+  #example2 ul {
+    list-style-type: none; }
+
+/* Example 3 nesting CSS properties */
+li {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px; }
+
+/* Example 4 nesting with ampersand side-by-side*/
+.example4 {
+  background-color: white; }
+  .example4.active {
+    border: 2px solid red; }
+  .example4:hover {
+    background-color: blue; }
+  .example4::before {
+    content: "Example 4"; }
+
+/*
+  Sass operators  + - / *  %
+*/
+.test-class1 {
+  font-size: 24px;
+  width: 6em;
+  height: 10%;
+  margin: 3rem;
+  background-color: #101f20; }
+
+.test-class2 {
+  font-size: 24px;
+  width: 50%;
+  height: 30%;
+  margin: 1px; }
+
+/* Sass extend */
+/* Example 1 */
+h1, .sample-text {
+  font-size: 30px;
+  font-style: italic; }
+
+h1 {
+  color: #000; }
+
+/* Example 2 extending all nested selectors */
+.test-section, .new-section {
+  padding: 20px; }
+  .test-section h3, .new-section h3 {
+    color: blue; }

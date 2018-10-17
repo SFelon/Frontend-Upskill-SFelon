@@ -1,0 +1,51 @@
+/**
+* Sass mixins
+**/
+
+@mixin blur-text() {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+@mixin margin-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin overlay($opacity) {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: $opacity;
+  background-color: black;
+}
+
+.overlay {
+  @include overlay(0.8);
+}
+
+/* Mixin for web fonts embedding */
+
+@mixin fontFace($family,$src,$style: normal,$weight: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.eot'); // IE9 compat
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+    url('#{$src}.woff') format('woff'), // standards
+    url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+    url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+/*
+@include fontFace('MyFont','font/myfont');
+*/
+
+

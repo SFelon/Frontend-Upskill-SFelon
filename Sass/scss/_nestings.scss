@@ -1,0 +1,63 @@
+/**
+* Sass nesting
+**/
+
+#example {
+  position: fixed;
+  width: 100%;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      background-color: #ffffff;
+      color: #bcbcbc;
+    }
+  }
+}
+
+/* Example 2 nesting media queries */
+
+#example2 {
+  position: fixed;
+  width: 100%;
+
+  @media (max-width:500px) {
+    left: -100px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+/* Example 3 nesting CSS properties */
+
+li {
+  margin: {
+    top: 10px;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+/* Example 4 nesting with ampersand side-by-side*/
+
+.example4 {
+  background-color: white;
+
+  &.active {
+    border: 2px solid red;
+  }
+
+  &:hover {
+    background-color: blue;
+  }
+
+  &::before {
+    content: "Example 4";
+  }
+
+}
+
+

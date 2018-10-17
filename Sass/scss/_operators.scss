@@ -1,0 +1,18 @@
+/**
+*  Sass operators  + - / *  %
+**/
+
+.test-class1{
+  font-size:  16px + 8px;
+  width: 4em + 2;
+  height: 20% - 10%;
+  margin: 4rem - 1;
+  background-color: #202020 - #100100;
+}
+
+.test-class2{
+  font-size:  12px *2;
+  width: (100% / 2);
+  height: 20% * 1.5;
+  margin: (50px % 7);
+}
