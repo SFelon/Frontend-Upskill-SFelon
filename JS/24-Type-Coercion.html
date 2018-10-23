@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type coercion</title>
+</head>
+<body>
+  <script>
+    /**
+     * Explicit type coercion
+     */
+
+    var a = String(123);
+    var b = String(null);
+    var c = String(false);
+
+    console.log(`Explicit ${typeof(c)} type coercion:  ${a}, ${b}, ${c}`);
+
+    var a = Boolean(2);
+    var b = Boolean('');
+    var c = Boolean(undefined);
+
+    console.log(`Explicit ${typeof(c)} type coercion:  ${a}, ${b}, ${c}`);
+
+    var a = Number('-10.24');
+    var b = Number(undefined);
+    var c = Number(false);
+
+    console.log(`Explicit ${typeof(c)} type coercion:  ${a}, ${b}, ${c}`);
+
+    /**
+     * Implicit type coercion
+     */
+
+    var a = 123 + '';
+    console.log(`Implicit ${typeof(a)} type coercion:  ${a}`);
+
+    var a = !!5;
+    var b = 5 || 'hi';
+    var c = 'good' && 123;
+
+    console.log(`Implicit ${typeof(a)} type coercion:  ${a}, ${b}, ${c}`);
+
+    var a = 10 > '20';
+    var b = 10 != 20;
+    var c = '1' * 10;
+
+    console.log(`Implicit ${typeof(c)} type coercion:  ${a}, ${b}, ${c}`);
+
+  </script>
+</body>
+</html>

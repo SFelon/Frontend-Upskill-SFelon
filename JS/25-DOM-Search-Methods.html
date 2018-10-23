@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Search Methods</title>
+  <style>
+    div#elementId {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      color: #fff;
+      line-height: 100px;
+      vertical-align: center;
+      text-align: center;
+    }
+
+    div.elementClass {
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+      color: #fff;
+      line-height: 100px;
+      vertical-align: center;
+      text-align: center;
+    }
+  </style>
+  <script>
+    /**
+     * DOM Search
+     */
+    document.addEventListener('DOMContentLoaded', function () {
+
+      console.log("getElementsByTagName('p')");
+      var paragraph = document.getElementsByTagName('p');
+      console.log(paragraph[0]);
+      console.log('--------------');
+
+      console.log("document.getElementById('elementId')");
+      var elementId = document.getElementById('elementId');
+      console.log(elementId);
+      console.log('--------------');
+
+      console.log("getElementsByClassName('elementClass')");
+      var elementClass = document.getElementsByClassName('elementClass');
+      console.log(elementClass[0]);
+      console.log('--------------');
+
+      console.log("document.querySelector('ul li a')");
+      var link = document.querySelector('ul li a');
+      console.log(link);
+      console.log('Link text content:');
+      console.log(document.querySelector('ul li a').textContent);
+      console.log('--------------');
+
+      console.log("querySelectorAll('ul li a')");
+      var allLinks = document.querySelectorAll('ul li a');
+      console.log(allLinks);
+      console.log(allLinks[0]);
+      console.log(allLinks[1]);
+      console.log('--------------');
+    });
+  </script>
+</head>
+<body>
+  <section>
+    <h3>DOM Search Methods examples</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, officiis?</p>
+    <div id="elementId">Get by id</div>
+    <div class="elementClass"> Get by class</div>
+    <div>
+      <ul>
+        <li>
+          <a href="#">Link_1</a>
+        </li>
+        <li>
+          <a href="#">Link_2</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

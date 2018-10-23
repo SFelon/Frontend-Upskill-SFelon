@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Null vs undefined</title>
+</head>
+<body>
+  <script>
+    console.log('Null vs undefined');
+    console.log(`typeOf(null): ${typeof(null)}`);
+    console.log(`typeOf(undefined): ${typeof(undefined)}`);
+    console.log(`null == undefined: ${null == undefined}`);
+    console.log(`null === undefined: ${null === undefined}`);
+
+    console.log('-----------------------');
+    console.log('Truthy and falsy values');
+    console.log(`Falsy values: ${undefined}, ${null}, ${0}, ${''}, ${NaN}`);
+    console.log('Truthy values: all not falsy values');
+
+    var height;
+    if (height) {
+      console.log('Variable is defined.');
+    } else {
+      console.log('Variable has not been defined.');
+    }
+
+  </script>
+</body>
+</html>

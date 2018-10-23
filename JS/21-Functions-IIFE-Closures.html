@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions IIFE Closures</title>
+</head>
+<body>
+  <script>
+    // Function Declaration
+    function calculateAge(dateOfBirth) {
+      return 2018 - dateOfBirth;
+    }
+
+    // Function Expression
+    var calculateAgeVar = function(dateOfBirth) {
+      return 2018 - dateOfBirth;
+    };
+
+    console.log(`Function declaration: ${calculateAge(1992)}`);
+    console.log(`Function expression: ${calculateAgeVar(2000)}`);
+
+    //Function as a argument
+    var years = [1992, 2000, 1958, 1975];
+
+    function calculateArray(array, fn) {
+      var resultArray = [];
+
+      for (index in array) {
+        resultArray.push(fn(array[index]));
+      }
+
+      return resultArray;
+    }
+
+    console.log(`Function as an argument: ${calculateArray(years, calculateAge)}`);
+
+    //IIFE - immediately invoked function expression
+    (function (luckyNumber) {
+      var luckIncreased = luckyNumber * 1000;
+      console.log(`Lucky number is: ${luckIncreased}`);
+    })(5);
+
+    console.log(`Cannot access IIFE variables outside IIFE. luckIncreased - not defined`);
+
+    /*
+    * Closures
+    * An inner function has always access to the variables and parameters of its outer function, even after the outer
+    * function, even after the outer function has returned.
+    * */
+
+    function retirement(retirementAge) {
+      var text = ' years until retirement.';
+      return function(dateOfBirth) {
+        return console.log(retirementAge - (2018 - dateOfBirth) + text);
+      }
+    }
+
+    console.log('Closures: ');
+    retirement(65)(1992);
+
+  </script>
+</body>
+</html>

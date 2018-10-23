@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Syntax Loops Conditional Statements</title>
+</head>
+<body>
+  <script>
+    /**
+     * Syntax
+     */
+
+    var x, y, xy, z;
+    x = 100;
+    y = 100.5;
+    xy = x + y;
+    z = 'String w JS';
+    console.log('Syntax');
+    console.log(`x: ${x} y: ${y} z: ${z} xy: ${xy}`);
+
+    /**
+     * For Loop
+     */
+
+    console.log('For loop');
+    for (var i = 0; i <= 10; i += 2) {
+      console.log(i);
+    }
+
+    console.log('For loop backwards');
+    for (var i = 10; i >= 0; i--) {
+      console.log(i);
+    }
+
+    console.log('For in');
+    var array = [3,2,1];
+    var object = {
+      first: 1,
+      second: 2,
+      third: 3,
+    };
+
+    for (index in array) {
+      console.log(index);
+    }
+
+    for (index in array) {
+      console.log(array[index]);
+    }
+
+    for (property in object) {
+      console.log(property);
+    }
+
+    for (value in object) {
+      console.log(object[value]);
+    }
+
+    console.log('For of - ES6 Only');
+    var array = [3,2,1];
+    var arrayOfObjects = [{
+      first: 1,
+      second: 2,
+      third: 3,
+    },{
+      fourth: 4,
+      fifth: 5,
+      sixth: 6,
+    }];
+
+    for (index of array) {
+      console.log(index);
+    }
+
+    for (object of arrayOfObjects) {
+      console.log(object);
+    }
+
+    /*
+     Both for..of and for..in statements iterate over lists; the values iterated on are different though,
+     for..in returns a list of keys on the object being iterated, whereas for..of returns a list of values
+     of the numeric properties of the object being iterated.
+
+     Another distinction is that for..in operates on any object; it serves as a way to inspect properties on this object.
+     for..of on the other hand, is mainly interested in values of iterable objects.
+     Built-in objects like Map and Set implement Symbol.iterator property allowing access to stored values.
+     */
+
+    /**
+     * Do While
+     */
+    console.log('Do While Lopp');
+    var i = 0;
+    text = '';
+    do {
+      text += " The number is " + i;
+      i++;
+    }
+    while (i < 3);
+    console.log(text);
+
+
+    /**
+     * While and if statement
+     */
+    console.log('While Loop and If Statement');
+    var j = 0;
+    while(j < 6) {
+      if (j === 3) {
+        console.log('three');
+        j++;
+        continue;
+      } else if ( j === 5) {
+        break;
+      } else {
+        console.log(j);
+        j++;
+      }
+    }
+
+    /**
+     * Switch statement
+     */
+
+    console.log('Switch Statement');
+    var job = 'instructor';
+    switch (job) {
+      case 'teacher':
+      case 'instructor':
+        console.log( job + ' teaches other people.');
+        break;
+      case 'driver':
+        console.log( job + ' drives a car.' );
+        break;
+      default:
+        console.log('does nothing.');
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    /**
+     * Ways of creating object
+     */
+
+    // Keyword new
+    var person = new Object();
+    person.firstName = 'Bill';
+    person.lastName = 'Smith';
+    person.hobbies = ['fishing', 'books'];
+
+    console.log('Keyword -new-: ');
+    console.log(person);
+
+    // Object initializer
+    var person = {
+      firstName: 'Jane',
+      lastName: 'Lopez',
+      hobbies: ['architecture', 'films'],
+    };
+
+    console.log('Object initializer: ');
+    console.log(person);
+
+    // With function
+    var Person = function(firstName, lastName, job) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.job = job;
+    }
+
+    var jack = new Person('Jack', 'Comet', 'teacher');
+    console.log('With function: ');
+    console.log(jack);
+
+    // With Object.create()
+    var person = {
+      firstName: 'Sandra',
+      lastName: 'Bull',
+      job: 'lecturer',
+    };
+
+    var sandra = Object.create(person);
+    console.log('With Object.create(): ');
+    console.log(sandra);
+
+    /**
+     * Object reference
+     */
+
+    console.log('Object reference - before ');
+
+    var object1 = {
+      value: 10,
+    }
+
+    var object2 = object1;
+    console.log(`Object 1 value: ${object1.value}`);
+    console.log(`Object 2 value: ${object2.value}`);
+
+    object1.value = 20;
+    console.log('Object reference - after: ');
+    console.log(`Object 1 value: ${object1.value}`);
+    console.log(`Object 2 value: ${object2.value}`);
+
+    /**
+     * Object comparison
+     */
+    console.log('Object comparison')
+
+    var cassandra = {
+      job: 'developer',
+      age: 25,
+    }
+
+    var tom = {
+      job: 'developer',
+      age: 25,
+    }
+
+    function isEquivalent(a, b) {
+      var aProps = Object.getOwnPropertyNames(a);
+      var bProps = Object.getOwnPropertyNames(b);
+
+      if (aProps.length != bProps.length) {
+        return false;
+      }
+
+      for (var i = 0; i < aProps.length; i++) {
+        var propName = aProps[i];
+
+        if (a[propName] !== b[propName]) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    console.log(`Same value objects comparison === : ${cassandra === tom}`);
+    console.log(`Same value objects comparison == : ${cassandra === tom}`);
+    console.log(`Same value objects comparison custom function : ${isEquivalent(cassandra, tom)}`);
+
+    var jessica = cassandra;
+    console.log(`Reference object comparison === : ${cassandra === jessica}`);
+
+  </script>
+</body>
+</html>

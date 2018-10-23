@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scope and hoisting</title>
+</head>
+<body>
+  <script>
+    /**
+     * Scope of var
+     */
+
+    console.log('var - functional scope');
+    var a = 'First!';
+    first();
+
+    function first() {
+      var b = 'Second!';
+      second();
+
+      function second() {
+        var c = 'Third!';
+        console.log(`a + b + c in second() function:  ${a + b + c}`);
+      }
+    }
+    console.log('var c outside second() function: not defined');
+
+    /**
+     * Hoisting
+     */
+
+    console.log(`Using function before declaration: ${calculateAge(2000)}`);
+
+    function calculateAge(dateOfBirth) {
+      return 2018 - dateOfBirth;
+    }
+
+    console.log(`Invoking variable before declaration: ${variable}`)
+    var variable = 'test';
+
+  </script>
+</body>
+</html>
