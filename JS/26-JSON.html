@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON</title>
+</head>
+<body>
+  <script>
+    /**
+     * JSON from string
+     */
+
+    console.log('JSON from string');
+    var text = '{"people" : [' +
+      '{ "firstName":"Alex" , "lastName":"Doe", "occupation":"teacher"},' +
+      '{ "firstName":"Mary" , "lastName":"Smith", "occupation":"singer" },' +
+      '{ "firstName":"Peter" , "lastName":"Jones", "occupation":"manager" } ]}';
+
+    var jsonObject = JSON.parse(text);
+
+    console.log(`String: ${text}`);
+    console.log('Object:');
+    console.log(jsonObject);
+
+    /**
+     * JSON from array
+     */
+
+    console.log('JSON from array');
+    var array = {
+      "people" : [
+        {"firstName":"Alex" , "lastName":"Doe", "occupation":"teacher"},
+        {"firstName":"Mary" , "lastName":"Smith", "occupation":"singer" },
+        {"firstName":"Peter" , "lastName":"Jones", "occupation":"manager"},
+        ]
+    };
+    console.log("Array: ");
+    console.log(array);
+
+
+    var stringArray = JSON.stringify(array);
+    console.log("String: ");
+    console.log(stringArray);
+
+    var jsonObject = JSON.parse(stringArray);
+    console.log("Object: ");
+    console.log(jsonObject);
+
+  </script>
+</body>
+</html>

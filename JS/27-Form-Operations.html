@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      margin: 50px 50px;
+    }
+    input, fieldset, select {
+      margin-bottom: 12px;
+    }
+  </style>
+  <script>
+    /**
+     * JS form operation
+     */
+
+    function resetForm() {
+      document.getElementById("exampleForm").reset();
+    }
+
+    function submitForm() {
+      document.getElementById("exampleForm").submit();
+    }
+
+
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form
+      id="exampleForm"
+      method="GET"
+      action=""
+    >
+      <label for="1">Name</label>
+      <input type="text" id="1" name="fullname" placeholder="Name..">
+
+      <label for="3">Telephone</label>
+      <input type="tel" id="3" name="telephone" placeholder="Telephone Number..">
+
+      <label for="5">E-mail</label>
+      <input type="email" id="5" name="email" placeholder="Email..">
+
+      <label for="6">Password</label>
+      <input type="password" id="6" name="password" placeholder="Password..">
+
+      <label for="7">Date</label>
+      <input type="date" id="7" name="dateInput" min="1900-01-01" >
+
+      <fieldset>
+        <legend>Checkbox</legend>
+        <div>
+          <input type="checkbox" id="12" name="checkboxInput"
+                 value="1" checked />
+          <label for="12">1</label>
+        </div>
+        <div>
+          <input type="checkbox" id="13" name="checkboxInput"
+                 value="2" />
+          <label for="13">2</label>
+        </div>
+      </fieldset>
+
+      <input type="reset" onclick="resetForm()" value="Reset" />
+      <input type="submit" onclick="submitForm()" value="Submit" />
+    </form>
+  </div>
+</body>
+</html>

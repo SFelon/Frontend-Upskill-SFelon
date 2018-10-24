@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This and Context</title>
+</head>
+<body>
+  <script>
+    /**
+     * This keyword
+     */
+
+    console.log(`this === window: ${this === window}`);
+    console.log(this);
+
+    console.log(`this.document === document: ${this.document === document}`);
+    console.log(this.document);
+
+    this.variable = 'hello';
+    console.log(`this.variable === window.variable: ${this.variable === window.variable}`);
+    console.log(this.variable);
+
+    console.log('');
+
+    var object = {
+      property: 'hello',
+      func: function () {
+        return this.property
+      }
+    };
+    console.log('this bounded to the object');
+    console.log('object: ');
+    console.log(object);
+    console.log('return this.property: ');
+    console.log(object.func());
+
+    console.log('');
+
+    var object = {
+      property: 'hello',
+      func: function () {
+        console.log('method this: ');
+        console.log(this);
+        console.log(this.property + ' sir!');
+
+        function innerFunction() {
+          console.log('inner function this: ');
+          console.log(this)
+        }
+        innerFunction();
+      }
+    };
+
+    console.log('Difference between method and regular function');
+    object.func();
+
+    console.log('');
+
+    var Person = function(firstName, lastName, job) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.job = job;
+    }
+
+    var jack = new Person('Jack', 'Comet', 'teacher');
+
+    console.log('This with object constructor: ');
+    console.log(jack);
+    console.log(jack.firstName);
+
+    /**
+     * Call, apply, bind
+     */
+    console.log('');
+    console.log('Call, apply, bind');
+
+    function add(c, d){
+      return this.a + this.b + c + d;
+    }
+
+    var object = {
+      a: 5,
+      b: 10,
+    };
+
+    var result = add.call(object, 15, 20);
+    console.log('This and call: ');
+    console.log(result);
+
+    var result = add.apply(object, [25, 50]);
+    console.log('This and apply: ');
+    console.log(result);
+
+
+    console.log('');
+    console.log('Bind and this: ')
+    function func() {
+      return this.value;
+    }
+
+    var secondFunc = func.bind({value: 'hi'});
+    console.log(secondFunc());
+
+    var thirdFunc = secondFunc.bind({value: 'hello'}); // bind only works once!
+    console.log(thirdFunc());
+
+    var object = {
+      value: 100,
+      func: func,
+      secondFunc: secondFunc,
+      thirdFunc: thirdFunc,
+    };
+
+    console.log(object.value,
+      object.func(),
+      object.secondFunc(),
+      object.thirdFunc()
+    );
+  </script>
+</body>
+</html>

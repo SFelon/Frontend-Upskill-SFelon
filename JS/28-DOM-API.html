@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM API</title>
+  <script>
+    function changeText() {
+      var p = document.getElementById("paragraph");
+      p.style.color = "red";
+      p.style.fontSize = "32px";
+    }
+  </script>
+</head>
+<body>
+
+  <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, inventore.</p>
+  <button type="button" onclick="changeText()">Change Text</button>
+
+  <br/>
+  <br/>
+  <a href="#home">HOME</a>
+  <a href="#main">MAIN</a>
+  <a href="#about">ABOUT</a>
+  <script>
+    /**
+     * Difference between JS and DOM
+     */
+
+    var anchorTags = document.getElementsByTagName("a");
+    for (var i = 0; i < anchorTags.length ; i++) {
+      alert("Text value for " + i + " element is " + anchorTags[i].text + "\n");
+    }
+
+    /**
+     * DOM elements
+     *
+     * document.getElementsByTagName("a")
+     * anchorTags.length - JS array also includes .length
+     * alert()
+     * anchorTags[i].text
+     */
+
+    /**
+     * JS elements
+     *
+     * var anchorTags
+     * for (var i = 0; i < ... ; i++)
+     * "Text value for " + i + " element is " + ... + "\n"
+     */
+  </script>
+</body>
+</html>

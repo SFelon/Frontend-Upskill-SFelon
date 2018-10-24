@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events</title>
+</head>
+<body>
+  <p id="example1"> Click to start event </p>
+  <p id="example2"> Click to start event </p>
+  <p id="example3"> Mouse over to start event </p>
+  <p id="example4"> Drag text selection to start event </p>
+  <p id="example5"> Press enter to start event </p>
+
+  <script>
+    function changeFontSize() {
+      this.style.fontSize = "36px";
+    }
+
+    function changeTextColor() {
+      this.style.color = "red";
+    }
+
+    function changeBackgroundColor() {
+      this.style.backgroundColor = "coral";
+    }
+
+    /**
+     * Events
+     */
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      document.getElementById("example1").addEventListener('click', changeFontSize);
+      document.getElementById("example2").onclick = changeBackgroundColor;
+      document.getElementById("example3").onmouseover = changeTextColor;
+      document.getElementById("example4").addEventListener('dragstart', changeFontSize);
+      document.addEventListener('keypress', function(event) {
+        if(event.key === 'Enter') {
+          document.getElementById("example5").style.border = "2px solid purple";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
