@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Patterns</title>
+</head>
+<body>
+  <script>
+    console.log('MODULE PATTERN');
+    console.log('Basic value 5');
+    var testValue = 5
+
+    var MODULE = (function (testValue) {
+      var counter = testValue;
+
+      return {
+        incrementCounter: function () {
+          return counter++;
+        },
+
+        resetCounter: function () {
+          console.log( "Value before reset: " + counter );
+          counter = 0;
+        }
+      };
+    })(testValue);
+
+    // console.log(counter); - cannot access private variable
+    MODULE.incrementCounter();
+    MODULE.resetCounter();
+
+    console.log('');
+
+    console.log('REVEALING MODULE PATTERN');
+    var REVEALING_MODULE = (function(testValue) {
+      var plusTen = testValue + 10;
+
+      var privateFunc = function() {
+        console.log(plusTen + ' Inside private function');
+      };
+
+      return {
+        publicFunc: privateFunc
+      };
+    })(testValue);
+
+    //console.log(plusTen) - cannot access private var
+    //console.log(privateFunc()) - cannot access private function
+    REVEALING_MODULE.publicFunc();
+
+    console.log('');
+
+    console.log('OBSERVER PATTERN');
+    var OBSERVER = (function() {
+      var observers = [];
+
+      var subscribe = function(observer) {
+        observers.push(observer);
+        console.log(observers);
+      };
+
+      var unsubscribe = function(observer) {
+        var index = observers.indexOf(observer);
+        if(index > -1) {
+          observers.splice(index, 1);
+        }
+        console.log(observers);
+      };
+
+      var notifyAll = function() {
+        for(var i = 0; i < observers.length; i++) {
+          observers[i].notify();
+        }
+      };
+
+      return {
+        subscribe: subscribe,
+        unsubscribe: unsubscribe,
+        notifyAll: notifyAll,
+      };
+    })();
+
+    function Observer (name) {
+      return {
+        notify: function() {
+          console.log("Observer " + name + " is notified!");
+        }
+      };
+    }
+
+    var firstObserver = new Observer(1);
+    var secondObserver = new Observer(2);
+    firstObserver.notify();
+    secondObserver.notify();
+    OBSERVER.subscribe(firstObserver);
+    OBSERVER.subscribe(secondObserver);
+    OBSERVER.unsubscribe(firstObserver);
+    OBSERVER.notifyAll();
+
+  </script>
+</body>
+</html>

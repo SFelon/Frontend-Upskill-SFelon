@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async JS</title>
+</head>
+<body>
+  <button type="button" onclick="xhrRequestExample1()">XMLHttpRequest Example 1</button>
+  <button type="button" onclick="xhrRequestExample2()">XMLHttpRequest Example 2</button>
+  <button type="button" onclick="fetchRequest()">Fetch Example</button>
+
+  <script>
+    /**
+     * Timeout & Interval
+     */
+
+    var messeage = 'Hello World';
+    console.log(messeage);
+
+    function timeoutTest() {
+      var timeoutDisplay = 'Displayed with timeout: Hello World';
+      console.log(timeoutDisplay);
+    }
+
+    setTimeout(timeoutTest, 2000);
+
+    // can be cleared with clearTimeout();
+
+    function intervalTest() {
+      var date = new Date();
+      console.log(date.toLocaleString());
+    }
+
+    var myInterval = setInterval(intervalTest, 3000);
+    function stopInterval() {
+      clearInterval(myInterval);
+    }
+
+    setTimeout(stopInterval, 12500);
+
+    /**
+     * XMLHttpRequest
+     */
+
+    function xhrRequestExample1() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://example.com/', true);
+      xhr.send();
+      xhr.addEventListener('load', function() {
+        if (this.status === 200) {
+          var parser = new DOMParser();
+          var htmlDocument = parser.parseFromString(this.responseText, 'text/html');
+          var heading = htmlDocument.getElementsByTagName('h1')[0];
+          var paragraph = htmlDocument.getElementsByTagName('p')[0].textContent;
+          console.log('XMLHttpRequest Example 1 result:');
+          console.log(heading);
+          console.log(paragraph);
+        }
+      });
+    }
+
+    function xhrRequestExample2() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status === 200) {
+          var parser = new DOMParser();
+          var htmlDocument = parser.parseFromString(this.responseText, 'text/html');
+          var heading = htmlDocument.getElementsByTagName('h1')[0];
+          var paragraph = htmlDocument.getElementsByTagName('p')[1].textContent;
+          console.log('XMLHttpRequest Example 2 result:');
+          console.log(heading);
+          console.log(paragraph);
+        }
+      };
+      xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://example.com/', true);
+      xhr.send();
+    }
+
+    /**
+     * Fetch
+     */
+
+    function fetchRequest() {
+      fetch('https://cors-anywhere.herokuapp.com/http://example.com/')
+        .then(
+          function(response) {
+            return response.text();
+          })
+        .then(
+          function(html) {
+            var parser = new DOMParser();
+            var htmlDocument = parser.parseFromString(html, 'text/html');
+            var heading = htmlDocument.getElementsByTagName('h1')[0].textContent;
+            var paragraph = htmlDocument.getElementsByTagName('p')[0].textContent;
+            console.log('Fetch Example result:');
+            console.log(heading);
+            console.log(paragraph);
+          }
+        )
+        .catch(
+        function(err) {
+          console.log('Error: ', err);
+        }
+      )
+    }
+  </script>
+</body>
+</html>

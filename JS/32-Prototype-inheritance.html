@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototype inheritance</title>
+</head>
+<body>
+  <script>
+    /**
+     * Prototype inheritance ES5
+     */
+
+    console.log('Prototype inheritance');
+    function Person(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+    }
+
+    var person1 = new Person('Lucy', 'Smith');
+    console.log(person1);
+
+    Person.prototype.getFullName = function() {
+      return this.firstName + ' ' + this.lastName;
+    }
+
+    console.log('Checking of own properties: ');
+    console.log(`firstName:  ${person1.hasOwnProperty('firstName')}`);
+    console.log(`lastName:  ${person1.hasOwnProperty('lastName')}`);
+    console.log(`getFullName:  ${person1.hasOwnProperty('getFullName')}`);
+    console.log('getFullName exists not on object but its prototype');
+
+    console.log('');
+
+    function Teacher(firstName, lastName, subject) {
+      Person.call(this, firstName, lastName);
+      this.subject = subject;
+    }
+
+    Teacher.prototype = Object.create(Person.prototype);
+    Teacher.prototype.constructor = Person;
+    console.log(Teacher);
+
+    Teacher.prototype.getInfo = function () {
+      return this.firstName + ' ' + this.lastName + ' ' + this.subject;
+    }
+
+    var teacher1 = new Teacher('Chris', 'Baggins', 'mathematics');
+    console.log(teacher1);
+    console.log(teacher1.getFullName());
+    console.log(teacher1.getInfo());
+
+    console.log('');
+    console.log('Teacher prototypeOf Person: ' + (Object.getPrototypeOf(Teacher.prototype) === Person.prototype));
+  </script>
+</body>
+</html>

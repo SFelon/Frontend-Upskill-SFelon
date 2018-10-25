@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies Local and Session Storage</title>
+  <style>
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      margin: 5px;
+      display: block;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button type="button" onclick="getCookie()">Display Cookie</button>
+    <button type="button" onclick="getSessionStorage()">Display Session Storage</button>
+    <button type="button" onclick="clearSessionStorage()">Clear Session Storage</button>
+    <button type="button" onclick="getLocalStorage()">Display Local Storage</button>
+    <button type="button" onclick="clearLocalStorage()">Clear Local Storage</button>
+  </div>
+
+  <script>
+    /**
+     * Cookies up to 4 KB
+     */
+
+    //Saving a cookie
+    document.cookie = "username=Jane Smith; expires=Fri, 02 Nov 2018 12:00:00 UTC";
+    var cookie =  document.cookie;
+    console.log(cookie);
+
+    function getCookie() {
+      alert('Cookie: ' + cookie);
+    }
+
+    /**
+     * Session Storage 5MB
+     */
+
+    sessionStorage.setItem('text', 'session storage item');
+
+    function getSessionStorage() {
+      alert('Session storage: ' + sessionStorage.getItem('text'));
+    }
+
+    // Can be also removed by key
+    // sessionStorage.removeItem('key');
+
+    function clearSessionStorage() {
+      sessionStorage.clear();
+    }
+
+    /**
+     * LocalStorage maximum storage
+     */
+
+    localStorage.setItem('text', 'local storage item');
+
+    function getLocalStorage() {
+      alert('Local storage: ' + localStorage.getItem('text'));
+    }
+
+    // Can be also removed by key
+    // localStorage.removeItem('key');
+
+    function clearLocalStorage() {
+      localStorage.clear();
+    }
+  </script>
+</body>
+</html>
