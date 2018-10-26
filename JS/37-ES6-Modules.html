@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modules</title>
+</head>
+<body>
+  <script>
+    /**
+     * Modules
+     */
+
+    /* Named exports
+    *  ----- lib.js -----
+    *  export const var1 = 5;
+    *  export function add(x) {
+    *     return x + 10;
+    *  }
+    *
+    *  ----- main.js -----
+    *  import { var1, add } from 'lib';
+    *
+    *  import * as lib from 'lib'
+    *  lib.add(5);
+    *
+    * */
+
+    /* Default export
+    *  ----- lib.js -----
+    *
+    *  export default function (x) {
+    *     return x + 10;
+    *  }
+    *
+    *  ----- main.js -----
+    *  import add from 'lib';
+    *
+    * */
+
+    /* Both named and default
+    *  ----- lib.js -----
+    *
+    *  export default function (x) {
+    *     return x + 10;
+    *  }
+    *
+    *  export function substract(x) {
+    *   return x - 10;
+    *  }
+    *
+    *  ----- main.js -----
+    *  import add from 'lib';
+    *  import { substract } from 'lib';
+    *
+    * */
+
+  </script>
+</body>
+</html>

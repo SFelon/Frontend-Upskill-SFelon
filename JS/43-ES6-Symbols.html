@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbols</title>
+</head>
+<body>
+  <script>
+    /**
+     * Symbols
+     */
+
+    console.log(Symbol());
+    console.log(typeof Symbol());
+    console.log((typeof Symbol() === 'symbol'));
+     // new Symbol(); - TypeError: Symbol is not a constructor
+
+
+    /**
+     * Uniqueness
+     */
+
+    const COLOR_RED    = Symbol('Red');
+    const COLOR_ORANGE = Symbol('Orange');
+    const COLOR_YELLOW = Symbol('Yellow');
+    const COLOR_GREEN  = Symbol('Green');
+    const COLOR_BLUE   = Symbol('Blue');
+    const COLOR_VIOLET = Symbol('Violet');
+
+    function getComplement(color) {
+      switch (color) {
+        case COLOR_RED:
+          return COLOR_GREEN;
+        case COLOR_ORANGE:
+          return COLOR_BLUE;
+        case COLOR_YELLOW:
+          return COLOR_VIOLET;
+        default:
+          return ('Unknown color: ' + color);
+      }
+    }
+    console.log(getComplement(COLOR_ORANGE));
+
+
+    /**
+     * As object property
+     */
+
+    const MY_KEY = Symbol();
+    const object = {
+      [MY_KEY]: 12345
+    };
+    console.log(Object.getOwnPropertySymbols(object));
+
+  </script>
+</body>
+</html>

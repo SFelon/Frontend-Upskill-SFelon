@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template literals</title>
+</head>
+<body>
+<script>
+  /**
+   * Template literals
+   */
+
+  const firstName = 'Bruno';
+  const lastName = 'Mars';
+  const yearOfBirth = 1990;
+  function calculateAge(yearOfBirth) {
+    return 2018 - yearOfBirth;
+  }
+
+  console.log('Template literals: ');
+  console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today he is ${calculateAge(yearOfBirth)} years old.`);
+
+  const fullName = `${firstName} ${lastName}`;
+  console.log(fullName);
+  console.log(fullName.startsWith('B'));
+  console.log(fullName.endsWith('s'));
+  console.log(fullName.includes(' '));
+
+  console.log(`multiline text - line 1
+line-2
+line-3
+  `);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let & Const</title>
+</head>
+<body>
+  <script>
+    /**
+     * Let & Const
+     */
+
+    function displayInfoES5(toggle) {
+      if(toggle) {
+        var firstName = 'Jane';
+        var yearOfBirth = 1985;
+      }
+      console.log( 'Person first name is ' + firstName + ' born in ' + yearOfBirth + '.');
+    }
+
+    console.log('ES5 var scope example: ');
+    displayInfoES5(true);
+
+    function displayInfoES6(toggle) {
+      if(toggle) {
+        let firstName = 'Jane';
+        const yearOfBirth = 1985;
+      }
+      console.log( 'Person first name is ' + firstName + ' born in ' + yearOfBirth + '.');
+    }
+
+    console.log('ES6 let and const scope example: ');
+    // displayInfoES6(true);
+    console.log('returns reference error - cannot access them outside if block');
+
+
+    console.log('ES5 - Init value: ')
+    var i = 20;
+    console.log(i);
+
+    console.log('Inside for loop: ')
+    for (var i = 0; i < 3; i++) {
+      console.log(i);
+    }
+
+    console.log('After for loop: ')
+    console.log(i);
+
+    console.log('');
+
+    console.log('ES6 - Init value: ')
+    let j = 20;
+    console.log(j);
+
+    console.log('Inside for loop: ')
+    for (let j = 0; j < 3; j++) {
+      console.log(j);
+    }
+
+    console.log('After for loop: ')
+    console.log(j);
+
+
+    // IIFE
+    (function () {
+      var example = 3;
+    })();
+    // cannot access var example.
+
+    {
+      const constExample = 1;
+      let letExample = 2;
+      var varExample = 3;
+    }
+
+    console.log('ES6 IIFE');
+    console.log(varExample);
+    console.log(constExample + letExample);
+
+  </script>
+</body>
+</html>

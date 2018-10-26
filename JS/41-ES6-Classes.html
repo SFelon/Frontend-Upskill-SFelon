@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes</title>
+</head>
+<body>
+<script>
+  /**
+   * Class and subclass
+   */
+
+  class Person {
+    constructor (firstName, lastName, yearOfBirth) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.yearOfBirth = yearOfBirth;
+    }
+
+    calculateAge(yearOfBirth) {
+      return console.log(2018 - yearOfBirth);
+    }
+
+    static speak() {
+      console.log('Hey there!');
+    }
+  }
+
+  class Athlete extends Person {
+    constructor (firstName, lastName, yearOfBirth, medals) {
+      super(firstName, lastName, yearOfBirth);
+      this.medals = medals;
+    }
+
+    wonMedal() {
+      this.medals++;
+      console.log(this.medals);
+    }
+
+    static speak() {
+      console.log('Hey there! I am an athlete.');
+    }
+  }
+
+  console.log('Class: ');
+  console.log(new Person('Jack', 'Smith', 1990));
+
+  console.log('Static method: ');
+  Person.speak();
+
+  console.log('Subclass: ');
+  console.log(new Athlete('Jane', 'Corazo', 1988, 2));
+
+  console.log('Static method: ');
+  Athlete.speak();
+
+  const athlete1 = new Athlete('Jane', 'Corazo', 1988, 2);
+  console.log('Method won medals: ');
+  athlete1.wonMedal();
+
+</script>
+</body>
+</html>

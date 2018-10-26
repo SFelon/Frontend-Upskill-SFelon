@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow functions</title>
+</head>
+<body>
+  <script>
+    /**
+     * Arrow functions
+     */
+
+    years = [1990, 1999, 2005, 1988, 2000];
+
+    console.log('Without bracket');
+    const ages = years.map(element => 2018 - element);
+    console.log(ages);
+
+    console.log('Two parameters');
+    const ages2 = years.map((element, index) => `Age element ${index + 1}: ${2018 - element}.`);
+    console.log(ages2);
+
+    console.log('Return statement');
+    const ages3 = years.map((element, index) => {
+      const age = 2018 - element;
+      return `Age element ${index + 1}: ${age}.`;
+    });
+    console.log(ages3);
+
+    const object = {
+      property: 'hello',
+      func: function () {
+        console.log('method this: ');
+        console.log(this);
+
+        innerFunction = () => {
+          console.log('inner function this: ');
+          console.log(this)
+        };
+        innerFunction();
+      }
+    };
+
+    console.log('Arrow function and this keyword');
+    object.func();
+  </script>
+</body>
+</html>

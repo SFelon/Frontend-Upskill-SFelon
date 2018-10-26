@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    /**
+     * Promises
+     *
+     * Object that keeps track about whether a certain event has happened already or not
+     * Determines what happens after the event has happened
+     * Implements the concept of a future value that we are expecting
+     *
+     * Three states:
+     * pending: initial state, neither fulfilled nor rejected.
+     * fulfilled: meaning that the operation completed successfully.
+     * rejected: meaning that the operation failed.
+     */
+
+
+      const examplePromise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          resolve('Promise resolved');
+        }, 500);
+      });
+
+      examplePromise
+        .then(function(value) {
+        console.log(value);
+       });
+
+      console.log(examplePromise);
+
+
+    function imgLoad(url) {
+      return new Promise(function(resolve, reject) {
+        const request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.responseType = 'blob';
+        request.onload = function() {
+          if (request.status === 200) {
+            resolve(request.response);
+          } else {
+            reject(Error('Image was not loaded successfully; error code:' + request.statusText));
+          }
+        };
+        request.onerror = function() {
+          reject(Error('Request error.'));
+        };
+        request.send();
+      });
+    }
+
+    const body = document.querySelector('body');
+    const myImage = new Image();
+    imgLoad('example.jpg')
+      .then(
+        function(response) {
+          const imageURL = window.URL.createObjectURL(response);
+          myImage.src = imageURL;
+          body.appendChild(myImage);
+          console.log(response);
+        },
+        function(Error) {
+          console.log(Error);
+      });
+  </script>
+</body>
+</html>

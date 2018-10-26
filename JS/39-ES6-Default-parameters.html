@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread and Rest operators</title>
+</head>
+<body>
+  <script>
+    /**
+     * Default parameters
+     */
+
+    function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'polish') {
+      console.log('firstName: ' + firstName);
+      console.log('yearOfBirth: ' + yearOfBirth);
+      console.log('lastName: ' + lastName);
+      console.log('nationality: ' + nationality);
+    }
+
+    SmithPerson('Jacek', 1990);
+
+    console.log('');
+
+    console.log('Num set to 1 by default')
+    function test(num = 1) {
+      console.log(typeof num);
+    }
+
+    test();
+    test(undefined);
+    test('');
+    test(null);
+
+
+    console.log('Using beforehand defined default parameters');
+    function fullName(firstName, lastName, fullName = firstName + ' ' + lastName) {
+      return [firstName, lastName, fullName];
+    }
+
+    fullName('David', 'Smith');
+    console.log(fullName('David', 'Smith'));
+
+  </script>
+</body>
+</html>

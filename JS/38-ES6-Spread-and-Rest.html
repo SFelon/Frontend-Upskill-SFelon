@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread and Rest operators</title>
+</head>
+<body>
+  <script>
+    /**
+     * Spread operator
+     */
+
+    function addFourValues(a, b, c, d) {
+      return a + b + c + d;
+    }
+    const array = [ 1, 2, 3, 4];
+
+    console.log('ES5 .apply');
+    console.log(addFourValues.apply(null, array));
+
+    console.log('ES6 spread');
+    console.log(addFourValues(...array));
+
+    const familySmith = ['John', 'Jane', 'Mark'];
+    const familyMiller = ['Mary', 'Bob', 'Ann'];
+    const bigFamily = [...familySmith, 'Lily', ...familyMiller];
+    console.log('Array concatenation');
+    console.log(bigFamily);
+
+    var array1 = [5, 4, 3];
+    var array2 = [2, 1, 0];
+    array1.push(...array2);
+    console.log('Push with spread');
+    console.log(array1);
+
+    /**
+     * Rest operator
+     */
+
+    function isFullAge(...years) {
+      years.forEach(currentElement => console.log((2016-currentElement) >= 18));
+    }
+
+    console.log('Is full age?: ');
+    isFullAge(1965, 1999, 2005, 2001, 1997);
+
+    function myFunction(a, b, ...restArgs) {
+      console.log("a", a);
+      console.log("b", b);
+      console.log("restArgs", restArgs);
+    }
+
+    console.log('Rest operator: ');
+    myFunction(1, 2, 3, 4, 5);
+
+  </script>
+</body>
+</html>
